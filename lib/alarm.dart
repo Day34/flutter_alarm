@@ -74,10 +74,7 @@ class Alarm {
     }
 
     for (final alarm in Alarm.getAlarms()) {
-      if (alarm.id == alarmSettings.id ||
-          (alarm.dateTime.day == alarmSettings.dateTime.day &&
-              alarm.dateTime.hour == alarmSettings.dateTime.hour &&
-              alarm.dateTime.minute == alarmSettings.dateTime.minute)) {
+      if (alarm.id == alarmSettings.id) {
         await Alarm.stop(alarm.id);
       }
     }
